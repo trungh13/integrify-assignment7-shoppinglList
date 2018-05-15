@@ -1,7 +1,9 @@
 /* Meh */
 body {
   font-family: "Open Sans", sans-serif;
-  font-size: 16px;
+}
+body p{
+    font-size: px;
 }
 .collapse-area {
   background: lightsalmon;
@@ -128,6 +130,7 @@ body {
   margin-top: auto;
   margin-bottom: auto;
   width: 50%;
+  min-width: 350px;
 }
 
 .warning-input::-webkit-input-placeholder {
@@ -140,6 +143,7 @@ body {
 input[type="submit"],
 button {
   padding: 1px 10px;
+  margin:5px 0px;
 }
 input[type="text"],
 input[type="number"] {
@@ -159,5 +163,14 @@ input[type="checkbox"] {
   margin-bottom: auto !important;
 }
 .panel-group {
-  box-shadow: 10px 7px lightcoral;
+  box-shadow: 10px 7px 0.5px lightcoral;
+}
+h4.panel-title {
+    font-size: 30px;
+    font-weight: 100;
+    text-shadow: 1px 1px lightgrey;
+}
+.button {
+    background-color: white;
+    border: 1px solid lightgray;
 }

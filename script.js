@@ -12,24 +12,24 @@ const btnSubmit = document.getElementById("btnSubmit");
 btnSubmit.addEventListener("click", createItem);
 
 const checkboxChange = function() {
-	//function checkboxChange() {
-		const checkBox = event.target;
-		const itemName = checkBox.parentNode.id;
-		const checkBoxItem = checkBox.parentNode;
-		const index = shoppingList.findIndex(function(obj) {
-			return obj.name === itemName;
-		});
-		const item = shoppingList[index];
-		checkBoxItem.remove();
-		if (checkBox.checked) {
-			item.bought = true;
-			renderItem(item, "bought-items");
-		} else {
-			item.bought = false;
-			renderItem(item, "shopping-items-list");
-		}
-		console.log(shoppingList);
-	}
+  //function checkboxChange() {
+  const checkBox = event.target;
+  const itemName = checkBox.parentNode.id;
+  const checkBoxItem = checkBox.parentNode;
+  const index = shoppingList.findIndex(function(obj) {
+    return obj.name === itemName;
+  });
+  const item = shoppingList[index];
+  checkBoxItem.remove();
+  if (checkBox.checked) {
+    item.bought = true;
+    renderItem(item, "bought-items");
+  } else {
+    item.bought = false;
+    renderItem(item, "shopping-items-list");
+  }
+  console.log(shoppingList);
+};
 
 const renderItem = (item, parentNode) => {
   let itemNode = document.createElement("div");
@@ -47,7 +47,7 @@ const renderItem = (item, parentNode) => {
   itemQuantity.className = "shopping-item-quantity";
   itemQuantity.innerHTML = item.quantity;
   let deleteButton = document.createElement("button");
-  deleteButton.className = "btnDelete";
+  deleteButton.className = "btnDelete button";
   deleteButton.innerHTML = "Delete";
   deleteButton.addEventListener("click", deleteItem);
 
@@ -70,13 +70,29 @@ function createItem() {
   event.preventDefault();
   const nameInput = document.getElementById("new-item-name");
   const quantityInput = document.getElementById("new-item-quantity");
-  let name = nameInput.value;
-  let quantity = quantityInput.value;
-  if (name != "" && quantity != "") {
-		const newItem = {};
-		newItem.bought = false;
-		newItem.name = name;
-    newItem.quantity = quantity;
+  let newName = nameInput.value;
+  let newQuantity = quantityInput.value;
+  const duplicateName = shoppingList.findIndex(function(obj) {
+    return obj.name === newName;
+  });
+  if (newName === "") {
+    nameInput.placeholder = "Please enter name";
+    nameInput.className = "warning-input";
+  }
+  if (newQuantity == "") {
+    quantityInput.placeholder = "Please enter quantity";
+    quantityInput.className = "warning-input";
+  }
+  if (duplicateName !== -1) {
+    nameInput.value = "";
+    nameInput.placeholder = "Duplicated name!";
+    nameInput.className = "warning-input";
+  }
+  if (newName != "" && newQuantity != "" && duplicateName == -1) {
+    const newItem = {};
+    newItem.bought = false;
+    newItem.name = newName;
+    newItem.quantity = newQuantity;
 
     document.getElementById("new-item-name").value = "";
     document.getElementById("new-item-quantity").value = "";
@@ -84,17 +100,8 @@ function createItem() {
     renderItem(newItem, "shopping-items-list");
   }
 
-  if (name === "") {
-    nameInput.placeholder = "Please enter name";
-    nameInput.className = "warning-input";
-  }
-  if (quantity == "") {
-    quantityInput.placeholder = "Please enter quantity";
-    quantityInput.className = "warning-input";
-  }
   console.log(shoppingList);
 }
-
 
 // const deleteItem = () => {
 function deleteItem() {
