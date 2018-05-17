@@ -120,6 +120,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: lightsalmon;
 }
 .container {
   height: 100%;
@@ -130,7 +131,7 @@ body {
   margin-top: auto;
   margin-bottom: auto;
   width: 50%;
-  min-width: 350px;
+  min-width: 412px;
 }
 
 .warning-input::-webkit-input-placeholder {
@@ -154,13 +155,19 @@ input[type="checkbox"] {
 }
 .item {
   display: grid;
-  grid-template-columns: 20px 2fr 1fr 1fr;
+  grid-template-columns: 20px 2fr 1fr 1fr 1fr;
   margin-bottom: 3px;
+  grid-gap: 2px;
 }
 .item * {
   display: inline;
   margin-top: auto !important;
   margin-bottom: auto !important;
+}
+.item input{
+  width: 100%;
+  border:none;
+  border-bottom: 1px solid gray;
 }
 .panel-group {
   box-shadow: 10px 7px 0.5px lightcoral;
@@ -173,4 +180,11 @@ h4.panel-title {
 .button {
     background-color: white;
     border: 1px solid lightgray;
+}
+.button:hover{
+  box-shadow: 2px 2px lightcoral;
+  
+}
+.hide{
+  display:none;
 }
