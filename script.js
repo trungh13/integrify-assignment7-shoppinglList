@@ -58,7 +58,7 @@ const renderItem = (item, parentNode) => {
   editButton.addEventListener("click", editItem);
   let deleteButton = document.createElement("button");
   deleteButton.className = "btnDelete button";
-  deleteButton.innerHTML = "Delete";
+  deleteButton.innerHTML = "Delee";
   deleteButton.addEventListener("click", deleteItem);
 
   itemNode.appendChild(itemCheckbox);
@@ -167,16 +167,14 @@ function editItem() {
     divName.classList.remove("hide");
     editQuantity.classList.add("hide");
     divQuantity.classList.remove("hide");
-    itemNode.id=editName.value;
+    itemNode.id = editName.value;
     shoppingList[index].name = editName.value;
     divName.innerHTML = editName.value;
     if (regexNum.test(editQuantity.value)) {
-      shoppingList[index].quantity = editQuantity.value;
-      divQuantity.innerHTML = editQuantity.value;
-      
-    }else{
-      editQuantity.value=shoppingList[index].quantity;      
-      
+      shoppingList[index].quantity = Number(editQuantity.value);
+      divQuantity.innerHTML =  Number(editQuantity.value);
+    } else {
+      editQuantity.value = shoppingList[index].quantity;
     }
   }
   console.log(shoppingList[index]);
