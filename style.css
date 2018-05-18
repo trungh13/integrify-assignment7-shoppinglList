@@ -122,6 +122,11 @@ body {
   padding: 0;
   background-color: lightsalmon;
 }
+input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid gray;
+}
 .container {
   height: 100%;
   display: flex;
@@ -164,11 +169,7 @@ input[type="checkbox"] {
   margin-top: auto !important;
   margin-bottom: auto !important;
 }
-.item input {
-  width: 100%;
-  border: none;
-  border-bottom: 1px solid gray;
-}
+
 .panel-group {
   box-shadow: 10px 7px 0.5px lightcoral;
 }
@@ -182,8 +183,14 @@ h4.panel-title {
   border: 1px solid lightgray;
 }
 .button:hover {
-  box-shadow: 2px 2px lightcoral;
+  box-shadow: 1px 1px lightcoral;
 }
 .hide {
   display: none;
+}
+input[type=submit]{
+  width: auto;
+}
+*{
+  border:none;
 }

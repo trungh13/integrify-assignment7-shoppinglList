@@ -123,7 +123,10 @@ function createItem() {
     document.getElementById("new-item-quantity").value = "";
     shoppingList.push(newItem);
     renderItem(newItem, "shopping-items-list");
-
+    if (nameInput.classList.contains("warning-input"))
+      nameInput.classList.remove("warning-input");
+    if (quantityInput.classList.contains("warning-input"))
+      quantityInput.classList.remove("warning-input");
     panel2a.click();
   }
   console.log(shoppingList);
@@ -167,9 +170,13 @@ function editItem() {
     divName.classList.remove("hide");
     editQuantity.classList.add("hide");
     divQuantity.classList.remove("hide");
-    itemNode.id = editName.value;
-    shoppingList[index].name = editName.value;
-    divName.innerHTML = editName.value;
+    if (editName.value != "") {
+      itemNode.id = editName.value;
+      shoppingList[index].name = editName.value;
+      divName.innerHTML = editName.value;
+    } else {
+      editName.value = shoppingList[index].name;
+    }
     if (regexNum.test(editQuantity.value)) {
       shoppingList[index].quantity = Number(editQuantity.value);
       divQuantity.innerHTML = Number(editQuantity.value);
