@@ -171,7 +171,7 @@ input[type="checkbox"] {
 }
 
 .panel-group {
-  box-shadow: 10px 7px 0.5px lightcoral;
+  box-shadow: 10px 7px lightcoral;
 }
 h4.panel-title {
   font-size: 30px;
