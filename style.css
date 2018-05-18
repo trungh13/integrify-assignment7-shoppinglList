@@ -2,8 +2,8 @@
 body {
   font-family: "Open Sans", sans-serif;
 }
-body p{
-    font-size: px;
+body p {
+  font-size: px;
 }
 .collapse-area {
   background: lightsalmon;
@@ -144,7 +144,7 @@ body {
 input[type="submit"],
 button {
   padding: 1px 10px;
-  margin:5px 0px;
+  margin: 5px 0px;
 }
 input[type="text"],
 input[type="number"] {
@@ -164,27 +164,26 @@ input[type="checkbox"] {
   margin-top: auto !important;
   margin-bottom: auto !important;
 }
-.item input{
+.item input {
   width: 100%;
-  border:none;
+  border: none;
   border-bottom: 1px solid gray;
 }
 .panel-group {
   box-shadow: 10px 7px 0.5px lightcoral;
 }
 h4.panel-title {
-    font-size: 30px;
-    font-weight: 100;
-    text-shadow: 1px 1px lightgrey;
+  font-size: 30px;
+  font-weight: 100;
+  text-shadow: 1px 1px lightgrey;
 }
 .button {
-    background-color: white;
-    border: 1px solid lightgray;
+  background-color: white;
+  border: 1px solid lightgray;
 }
-.button:hover{
+.button:hover {
   box-shadow: 2px 2px lightcoral;
-  
 }
-.hide{
-  display:none;
+.hide {
+  display: none;
 }

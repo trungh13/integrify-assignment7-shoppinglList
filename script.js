@@ -58,7 +58,7 @@ const renderItem = (item, parentNode) => {
   editButton.addEventListener("click", editItem);
   let deleteButton = document.createElement("button");
   deleteButton.className = "btnDelete button";
-  deleteButton.innerHTML = "Delee";
+  deleteButton.innerHTML = "Delete";
   deleteButton.addEventListener("click", deleteItem);
 
   itemNode.appendChild(itemCheckbox);
@@ -172,7 +172,7 @@ function editItem() {
     divName.innerHTML = editName.value;
     if (regexNum.test(editQuantity.value)) {
       shoppingList[index].quantity = Number(editQuantity.value);
-      divQuantity.innerHTML =  Number(editQuantity.value);
+      divQuantity.innerHTML = Number(editQuantity.value);
     } else {
       editQuantity.value = shoppingList[index].quantity;
     }
